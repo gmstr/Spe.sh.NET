@@ -38,6 +38,12 @@ namespace Spe.sh.NET.Data.SQL
     partial void DeleteTrackerData(TrackerData instance);
     #endregion
 		
+		public UrlRepositoryDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Spe_shConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public UrlRepositoryDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

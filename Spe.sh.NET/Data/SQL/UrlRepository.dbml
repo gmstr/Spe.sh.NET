@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Spe.sh" Class="UrlRepositoryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=Spe.sh;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Spe_shConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.short_url" Member="ShortUrls">
     <Type Name="ShortUrl">
       <Column Name="id" Member="Id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
