@@ -39,7 +39,7 @@ namespace Spe.sh.NET.Controllers
         }
 
         //
-        // GET/POST: /s/{url}
+        // GET/POST: /s?url={url}
         public string Shorten(string url)
         {
             string token = "";
