@@ -40,6 +40,10 @@ namespace Spe.sh.NET
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("favicon.ico");
 
+            routes.MapRoute("Tweetdeck Shorten",
+                "s",
+                new { controller = "home", action = "shorten" });
+
             routes.MapRoute("Home",
                 "",
                 new { controller = "home", action = "index" });
