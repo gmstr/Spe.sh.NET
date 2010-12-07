@@ -70,9 +70,6 @@ namespace Spe.sh.NET
 
             RegisterRoutes(RouteTable.Routes);
         }
-        protected void Application_Start()
-        {
-        }
 
         protected override Ninject.IKernel CreateKernel()
         {

@@ -19,22 +19,10 @@ namespace Spe.sh.NET.Controllers
         //
         // POST: /
         [HttpPost]
-        public ActionResult Index(FormCollection collection)
+        public ActionResult Index(string url)
         {
-            try
-            {
-                var uri = new Uri(collection["url"].ToString());
-                var token = Application.Repository.AddUrl(uri);
-                ViewData["token"] = token;
-            }
-            catch (UriFormatException ex)
-            {
-                TempData["error"] = "The provided URL was in an invalid format. Please try again.";
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Problem", "Error");
-            }
+            ViewData["token"] = Shorten(url);
+
             return View();
         }
 
@@ -49,7 +37,7 @@ namespace Spe.sh.NET.Controllers
                 token = Application.Repository.AddUrl(uri);
                 ViewData["token"] = token;
             }
-            catch (UriFormatException ex)
+            catch (UriFormatException)
             {
                 TempData["error"] = "The provided URL was in an invalid format. Please try again.";
             }
@@ -57,7 +45,7 @@ namespace Spe.sh.NET.Controllers
             {
                 return "An error has occurred: " + ex.Message;
             }
-            return Request.Url.Scheme +"://" + Request.Url.Authority + "/" + token;
+            return Request.Url.Scheme + "://" + Request.Url.Authority + "/" + token;
         }
 
         //
